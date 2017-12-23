@@ -23,15 +23,30 @@ namespace MIPS32
 
         private void btnAssemble_Click(object sender, EventArgs e)
         {
-            
-            
+            txtBoxMachineCode.Clear();
+            txtBoxErrors.Clear();
             for (int i = 0; i < txtBoxMnemonics.Lines.Count(); i++)
             {
                 string text = txtBoxMnemonics.Lines[i];
                 if (!String.IsNullOrEmpty(text))
                 {
-                    text = TextParser.LineParse(text);
-                    txtBoxMachineCode.AppendText(text);
+                    try
+                    {
+                        text = TextParser.LineParse(text);
+                        txtBoxMachineCode.AppendText(text);
+                        
+                    }
+                    catch(InstructionException ex)
+                    {
+                        txtBoxErrors.AppendText(ex.Message + " on line " + (i + 1));
+                        txtBoxErrors.AppendText(Environment.NewLine);
+                    }
+                    catch(ParameterException ex)
+                    {
+                        txtBoxErrors.AppendText(ex.Message + " on line " + (i + 1));
+                        txtBoxErrors.AppendText(Environment.NewLine);
+
+                    }
                     txtBoxMachineCode.AppendText(Environment.NewLine);
                 }
                 //string pattern = Patterns.instruction_name + Patterns.paranthesis_open + Patterns.register_name + Patterns.nonalphanumerical + Patterns.register_name + Patterns.nonalphanumerical + Patterns.register_name + Patterns.paranthesis_close;
