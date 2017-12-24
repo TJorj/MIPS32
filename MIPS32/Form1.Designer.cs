@@ -53,9 +53,11 @@
             this.txtBoxMnemonics.Location = new System.Drawing.Point(33, 99);
             this.txtBoxMnemonics.Multiline = true;
             this.txtBoxMnemonics.Name = "txtBoxMnemonics";
+            this.txtBoxMnemonics.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtBoxMnemonics.Size = new System.Drawing.Size(333, 264);
             this.txtBoxMnemonics.TabIndex = 1;
             this.txtBoxMnemonics.Text = "add($t1,$t2,$t3)\r\nsub($t1,$t2,$t3)";
+            this.txtBoxMnemonics.WordWrap = false;
             // 
             // txtBoxMachineCode
             // 
@@ -67,8 +69,10 @@
             this.txtBoxMachineCode.Multiline = true;
             this.txtBoxMachineCode.Name = "txtBoxMachineCode";
             this.txtBoxMachineCode.ReadOnly = true;
+            this.txtBoxMachineCode.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtBoxMachineCode.Size = new System.Drawing.Size(333, 264);
             this.txtBoxMachineCode.TabIndex = 2;
+            this.txtBoxMachineCode.WordWrap = false;
             // 
             // txtBoxErrors
             // 
@@ -81,8 +85,10 @@
             this.txtBoxErrors.Multiline = true;
             this.txtBoxErrors.Name = "txtBoxErrors";
             this.txtBoxErrors.ReadOnly = true;
+            this.txtBoxErrors.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtBoxErrors.Size = new System.Drawing.Size(898, 86);
             this.txtBoxErrors.TabIndex = 3;
+            this.txtBoxErrors.WordWrap = false;
             // 
             // Form1
             // 

@@ -16,6 +16,8 @@ namespace MIPS32
         private static string reg_src;
         private static string reg_tmp;
         private static string shamt;
+        private static string immediate_offset;
+        private static string jmp_adr;
 
         private static Regex rgx;
 
@@ -24,15 +26,16 @@ namespace MIPS32
         private const string reg_dest_generic = "noregister";
         private const string reg_src_generic = "noregister";
         private const string reg_tmp_generic = "noregister";
+        private const string immediate_generic = "";
+        
 
-      
         public static string LineParse(string text)
         {
             
             rgx = new Regex(Patterns.instruction_name, RegexOptions.IgnoreCase);
             MatchCollection matches = rgx.Matches(text);
             //exceptie daca nu s-a gasit instructiune sau 
-            //daca s-au gasit instructiuni (string de 3-5 litere fara spatii) in plus
+            //daca s-au gasit instructiuni (string de 2-5 litere fara spatii) in plus
             //stringuri de 6+ litere sunt ignorate 
             if (matches.Count == 0 || matches.Count > 1)
             {
@@ -99,13 +102,45 @@ namespace MIPS32
                         }
                 }
             }
+            if(Instructions.Collections[nume_instr].Type == "I")
+            {
+                switch(nume_instr)
+                {
+                    case "lb":
+                    case "lbu":
+                    case "lh":
+                    case "lhu":
+                    case "lui":
+                    case "lw":
+                    case "sb":
+                    case "sh":
+                    case "sw":
+                    case "lwc1":
+                    case "ldc1":
+                    case "swc1":
+                    case "sdc1":
+                        {
+                            ITypeOffsetParser(text);
+                            break;
+                        }
+                    default:
+                        {
+                            ITypeGenericParser(text);
+                            break;
+                        }
+                }
+            }
+            if(Instructions.Collections[nume_instr].Type == "J")
+            {
+                JTypeGenericParser(text);
+            }
             return parsed_string;
         }
-        private static void RTypeMFCParser(string text)
+        private static void RTypeMFCParser(string _text)
         {
             //instructiunea mfc0
             rgx = new Regex(Patterns.register_name, RegexOptions.IgnoreCase);
-            MatchCollection matches = rgx.Matches(text);
+            MatchCollection matches = rgx.Matches(_text);
             if (matches.Count == 2)
             {
                 reg_tmp = matches[0].Value.Replace(" ", "");
@@ -115,11 +150,11 @@ namespace MIPS32
             else
                 throw new ParameterException("Parameter count error");
         }
-        private static void RTypeMFParser(string text)
+        private static void RTypeMFParser(string _text)
         {
             //instructiunile MFLO MFHI
             rgx = new Regex(Patterns.register_name, RegexOptions.IgnoreCase);
-            MatchCollection matches = rgx.Matches(text);
+            MatchCollection matches = rgx.Matches(_text);
             if (matches.Count == 1)
             {
                 reg_dest = matches[0].Value.Replace(" ", "");
@@ -166,13 +201,18 @@ namespace MIPS32
                 reg_tmp = matches[1].Value.Replace(" ", "");
                 rgx = new Regex(Patterns.shamt, RegexOptions.IgnoreCase);
                 matches = rgx.Matches(_text);
-                if(matches.Count==0)
+                if(matches.Count==0 || matches.Count > 1)
                 {
-                    throw new ParameterException("Parameter error for immediate value");
+                    throw new ParameterException("Parameter error for shift value");
                 }
                 else
                 {
-                    shamt = matches[0].Value.Replace(" ", "");
+                    //completeaza valoarea cu 0 sau exceptie daca depaseste marimea 
+                    shamt = HexToBinary(matches[0].Value.Replace(" ", ""));
+                    if (shamt.Count() < 5)
+                        shamt = shamt.PadLeft(5, '0');
+                    else
+                        throw new ParameterException("Parameter error for shift value");
                     RTypeStringGenerator(reg_src_generic, reg_tmp, reg_dest, shamt);
                 }
             }
@@ -237,6 +277,114 @@ namespace MIPS32
                 throw new ParameterException("Parameter error for " + _reg_dest);
             }
             parsed_string += _shamt + " " + Instructions.Collections[nume_instr].Funct;
+        }
+        private static void ITypeGenericParser(string _text)
+        {
+            //instructiunile de tip nume_ins reg reg immediate_val
+            rgx = new Regex(Patterns.register_name, RegexOptions.IgnoreCase);
+            MatchCollection matches = rgx.Matches(_text);
+            if (matches.Count == 2)
+            {
+                reg_tmp = matches[0].Value.Replace(" ", "");
+                reg_src = matches[1].Value.Replace(" ", "");
+                rgx = new Regex(Patterns.immediate, RegexOptions.IgnoreCase);
+                matches = rgx.Matches(_text);
+                if (matches.Count == 0 || matches.Count > 1)
+                {
+                    throw new ParameterException("Parameter error for immediate value");
+                }
+                else
+                {
+                    //completeaza valoarea cu 0 sau exceptie daca depaseste marimea 
+                    immediate_offset = HexToBinary(matches[0].Value.Replace(" ", ""));
+                    if(immediate_offset.Count() < 16)
+                        immediate_offset = immediate_offset.PadLeft(16, '0');
+                    else
+                        throw new ParameterException("Paramaeter error for immediate value");
+                    ITypeStringGenerator(reg_src, reg_tmp, immediate_offset);
+                }
+            }
+            else
+                throw new ParameterException("Parameter count error");
+
+        }
+        private static void ITypeOffsetParser(string _text)
+        {
+            //instructiunile de tip nume_instr reg offset(reg)
+            rgx = new Regex(Patterns.register_name, RegexOptions.IgnoreCase);
+            MatchCollection matches = rgx.Matches(_text);
+            if (matches.Count == 2)
+            {
+                reg_src = matches[0].Value.Replace(" ", "");
+                reg_tmp = matches[1].Value.Replace(" ", "");
+                rgx = new Regex(Patterns.offset, RegexOptions.IgnoreCase);
+                matches = rgx.Matches(_text);
+                if (matches.Count == 0 || matches.Count > 1)
+                {
+                    throw new ParameterException("Parameter error for offset value");
+                }
+                else
+                {
+                    //completeaza valoarea cu 0 sau exceptie daca depaseste marimea 
+                    immediate_offset = HexToBinary(matches[0].Groups["offset_val"].Value.Replace(" ", ""));
+                    if (immediate_offset.Count() < 16)
+                        immediate_offset = immediate_offset.PadLeft(16, '0');
+                    else
+                        throw new ParameterException("Paramaeter error for offset value");
+                    ITypeStringGenerator(reg_src, reg_tmp, immediate_offset);
+                }
+
+            }
+            else
+                throw new ParameterException("Parameter count error");
+        }
+        private static void ITypeStringGenerator(string _reg_src, string _reg_tmp, string _immediate_offset)
+        {
+            //generaza stringul complet
+            try
+            {
+                parsed_string += Registers.Collections[_reg_src].Number + " ";
+            }
+            catch (Exception)
+            {
+                throw new ParameterException("Parameter error for " + _reg_src);
+            }
+            try
+            {
+                parsed_string += Registers.Collections[_reg_tmp].Number + " ";
+            }
+            catch (Exception)
+            {
+                throw new ParameterException("Parameter error for " + _reg_tmp);
+            }
+            parsed_string += _immediate_offset;
+        }
+        private static void JTypeGenericParser(string _text)
+        {
+            //genereza stringul pentru instructiuni J
+            rgx = new Regex(Patterns.jump_address, RegexOptions.IgnoreCase);
+            MatchCollection matches = rgx.Matches(_text);
+            if(matches.Count == 0 || matches.Count > 1)
+            {
+                throw new ParameterException("Parameter error for jump adress");
+            }
+            else
+            {
+                //completeaza valoarea cu 0 sau exceptie daca depaseste marimea 
+                jmp_adr = HexToBinary(matches[0].Value.Replace(" ", ""));
+                if (jmp_adr.Count() < 26)
+                   jmp_adr = jmp_adr.PadLeft(26, '0');
+                else
+                    throw new ParameterException("Parameter error for jump adress");
+                parsed_string += jmp_adr ;
+            }
+        }
+        private static string HexToBinary(string hex_string)
+        {
+            //converteste din hex in binar
+            string binary_string;
+            binary_string = Convert.ToString(Convert.ToInt32(hex_string, 16), 2);
+            return binary_string;
         }
     }
 }
