@@ -1,27 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-/// <summary>
-/// 0 pt shamt
-/// </summary>
 namespace MIPS32
 {
-    public partial class Form1 : Form
+    public partial class AssemblerForm : Form
     {
-       
-        public Form1()
+
+        public AssemblerForm()
         {
             InitializeComponent();
+            UpdateControls(null,null);
+           
+            this.Resize += UpdateControls;
+        }
+        private void PanelBTN_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
-        private void btnAssemble_Click(object sender, EventArgs e)
+        private void AssemblerForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void assembleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             txtBoxMachineCode.Clear();
             txtBoxErrors.Clear();
@@ -34,30 +43,126 @@ namespace MIPS32
                     {
                         text = TextParser.LineParse(text);
                         txtBoxMachineCode.AppendText(text);
-                        
+
                     }
-                    catch(InstructionException ex)
+                    catch (InstructionException ex)
                     {
-                        txtBoxErrors.AppendText(ex.Message + " on line " + (i + 1));
-                        txtBoxErrors.AppendText(Environment.NewLine);
+                        FormatErrorText(ex.Message, i);
+
                     }
-                    catch(ParameterException ex)
+                    catch (ParameterException ex)
                     {
-                        txtBoxErrors.AppendText(ex.Message + " on line " + (i + 1));
-                        txtBoxErrors.AppendText(Environment.NewLine);
+                        FormatErrorText(ex.Message, i);
 
                     }
                     txtBoxMachineCode.AppendText(Environment.NewLine);
                 }
-                //string pattern = Patterns.instruction_name + Patterns.paranthesis_open + Patterns.register_name + Patterns.nonalphanumerical + Patterns.register_name + Patterns.nonalphanumerical + Patterns.register_name + Patterns.paranthesis_close;
-                //Regex rgx = new Regex(pattern, RegexOptions.IgnoreCase);
-                //MatchCollection matches = rgx.Matches(text);
-                //GroupCollection groups = matches[0].Groups;
-                //CaptureCollection captures = groups["nume_reg"].Captures;
-                //txtBoxMachineCode.AppendText(Instructions.Collections[groups["nume_instr"].Value.Replace(" ", "")].Opcode + " " + Registers.Collections[captures[0].Value.Replace(" ", "")].Number + " " + Registers.Collections[captures[1].Value.Replace(" ", "")].Number + " " + Registers.Collections[captures[2].Value.Replace(" ", "")].Number + " " + Instructions.Collections[groups["nume_instr"].Value.Replace(" ", "")].Funct);
-                //txtBoxMachineCode.AppendText(Environment.NewLine);
+            }
+        }
+
+        private void FormatErrorText(string text, int line_number)
+        {
+            string[] temp = text.Split(' ');
+            for (int j = 0; j < temp.Length - 1; j++)
+            {
+                txtBoxErrors.AppendText(temp[j]);
+                txtBoxErrors.AppendText(" ");
+            }
+            txtBoxErrors.AppendColorText(temp[temp.Length - 1], Color.Red);
+
+            txtBoxErrors.AppendText(" on line ");
+            txtBoxErrors.AppendColorText((line_number + 1).ToString(), Color.Red);
+            txtBoxErrors.AppendText(Environment.NewLine);
+        }
+
+        private void TxtBoxMachineCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtBoxErrors_TextChanged(object sender, EventArgs e)
+        {
+            
+   
+        }
+
+        private void NewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Any unsaved changes will be lost. Continue?", "New File", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                txtBoxMnemonics.Clear();
+                txtBoxMachineCode.Clear();
+                txtBoxErrors.Clear();
             }
 
         }
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text File|*.txt";
+            saveFileDialog.Title = "Save Assembled Code";
+            saveFileDialog.FileName = "cod.txt";
+            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string[] tmp = txtBoxMachineCode.Lines;
+                using (Stream s = File.Open(saveFileDialog.FileName, FileMode.CreateNew))
+                using (StreamWriter sw = new StreamWriter(s))
+                {
+                    foreach (string line in tmp)
+                        sw.WriteLine(line);
+                }
+            }
+
+        }
+        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stream stream = null;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Load Instructions Code";
+            openFileDialog.Filter = "TXT files|*.txt";
+            openFileDialog.InitialDirectory = @"C:\";
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if((stream = openFileDialog.OpenFile())!=null)
+                {
+                    txtBoxMnemonics.Clear();
+                    using (stream)
+                    using (StreamReader sr = new StreamReader(stream))
+                    {
+                        string line = sr.ReadLine();
+                        txtBoxMnemonics.AppendText(line);
+                    }
+                }
+            }
+             
+        }
+        private void UpdateControls(object sender, EventArgs e)
+        {
+            panelTxtBoxCode.Left = panelWorkspace.Left + 30;
+            panelTxtBoxCode.Top = panelWorkspace.Top + menuStrip1.Height + 30;
+            panelTxtBoxCode.Height = panelWorkspace.Height - 30 - menuStrip1.Height - txtBoxErrors.Height - 30;
+            panelTxtBoxCode.Width = (panelWorkspace.Width - 60) / 2;
+
+            panelTxtBoxMachine.Left = panelTxtBoxCode.Right;
+            panelTxtBoxMachine.Top = panelWorkspace.Top + menuStrip1.Height + 30;
+            panelTxtBoxMachine.Height = panelWorkspace.Height - 30 - menuStrip1.Height - txtBoxErrors.Height - 30;
+            panelTxtBoxMachine.Width = (panelWorkspace.Width - 60) / 2;
+
+            panelTxtBoxErrors.Left = panelWorkspace.Left + 30;
+            panelTxtBoxErrors.Top = panelTxtBoxCode.Bottom ;
+            panelTxtBoxErrors.Width = (panelWorkspace.Width - 60);
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void assembleToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

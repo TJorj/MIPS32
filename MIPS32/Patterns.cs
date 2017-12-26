@@ -14,7 +14,5 @@ namespace MIPS32
         public const string immediate = @"\b[0][x](?<immediate_val>[0-9a-f]*)\b";
         public const string offset = @"\b[0][x](?<offset_val>[0-9a-f]*)\b" + @"\s*[(]\s*" + register_name + @"\s*[)]\s*";
         public const string jump_address = @"\b[0][x](?<jmp_adr>[0-9a-f]*)\b";
-        //\b[0][x](?<offset_val>[0-9a-f]*)\b
-        //(?<offset_val>\b[0-1]{16}\b)
     }
 }

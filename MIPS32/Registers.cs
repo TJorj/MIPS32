@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace MIPS32
 {
@@ -11,14 +9,18 @@ namespace MIPS32
         public static Dictionary<string, RegisterType> Collections = new Dictionary<string, RegisterType>();
         public static void LoadRegisters()
         {
-            System.IO.StreamReader inFile = new System.IO.StreamReader(@"registers.txt");
-            while (!inFile.EndOfStream)
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            using (Stream stream = assembly.GetManifestResourceStream("MIPS32.registers.txt"))
+            using (StreamReader inFile = new StreamReader(stream))
             {
-                string line = inFile.ReadLine();
-                string[] line_el = line.Split(' ');
-                Collections.Add(line_el[0], new RegisterType(line_el[1]));
+                while (!inFile.EndOfStream)
+                {
+                    string line = inFile.ReadLine();
+                    string[] line_el = line.Split(' ');
+                    Collections.Add(line_el[0], new RegisterType(line_el[1]));
+                }
             }
-            inFile.Close();
+            
         }
     }
 }

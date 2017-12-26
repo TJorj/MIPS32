@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MIPS32
@@ -14,11 +11,11 @@ namespace MIPS32
         [STAThread]
         static void Main()
         {
-            Instructions.LoadInstructins();
+            Instructions.LoadInstructions();
             Registers.LoadRegisters();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new AssemblerForm());
         }
     }
 }
