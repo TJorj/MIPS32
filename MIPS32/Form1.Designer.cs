@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.newToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructionsDemoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorsDemoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assembleToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,10 +52,8 @@
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.assembleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.assembleToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sourceCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assembledCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelTxtBoxCode.SuspendLayout();
             this.panelTxtBoxMachine.SuspendLayout();
@@ -62,13 +68,77 @@
             this.newToolStripMenuItem2,
             this.saveToolStripMenuItem2,
             this.loadToolStripMenuItem2,
-            this.assembleToolStripMenuItem2});
+            this.assembleToolStripMenuItem2,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(982, 28);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
+            // 
+            // newToolStripMenuItem2
+            // 
+            this.newToolStripMenuItem2.Name = "newToolStripMenuItem2";
+            this.newToolStripMenuItem2.Size = new System.Drawing.Size(51, 24);
+            this.newToolStripMenuItem2.Text = "New";
+            this.newToolStripMenuItem2.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem2
+            // 
+            this.saveToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sourceCodeToolStripMenuItem,
+            this.assembledCodeToolStripMenuItem});
+            this.saveToolStripMenuItem2.Name = "saveToolStripMenuItem2";
+            this.saveToolStripMenuItem2.Size = new System.Drawing.Size(52, 24);
+            this.saveToolStripMenuItem2.Text = "Save";
+            this.saveToolStripMenuItem2.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            // 
+            // loadToolStripMenuItem2
+            // 
+            this.loadToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.instructionsDemoToolStripMenuItem,
+            this.errorsDemoToolStripMenuItem,
+            this.customFileToolStripMenuItem});
+            this.loadToolStripMenuItem2.Name = "loadToolStripMenuItem2";
+            this.loadToolStripMenuItem2.Size = new System.Drawing.Size(54, 24);
+            this.loadToolStripMenuItem2.Text = "Load";
+            this.loadToolStripMenuItem2.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
+            // 
+            // instructionsDemoToolStripMenuItem
+            // 
+            this.instructionsDemoToolStripMenuItem.Name = "instructionsDemoToolStripMenuItem";
+            this.instructionsDemoToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.instructionsDemoToolStripMenuItem.Text = "Instructions Demo";
+            this.instructionsDemoToolStripMenuItem.Click += new System.EventHandler(this.instructionsDemoToolStripMenuItem_Click);
+            // 
+            // errorsDemoToolStripMenuItem
+            // 
+            this.errorsDemoToolStripMenuItem.Name = "errorsDemoToolStripMenuItem";
+            this.errorsDemoToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.errorsDemoToolStripMenuItem.Text = "Errors Demo";
+            this.errorsDemoToolStripMenuItem.Click += new System.EventHandler(this.errorsDemoToolStripMenuItem_Click);
+            // 
+            // customFileToolStripMenuItem
+            // 
+            this.customFileToolStripMenuItem.Name = "customFileToolStripMenuItem";
+            this.customFileToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.customFileToolStripMenuItem.Text = "Custom File";
+            this.customFileToolStripMenuItem.Click += new System.EventHandler(this.customFileToolStripMenuItem_Click);
+            // 
+            // assembleToolStripMenuItem2
+            // 
+            this.assembleToolStripMenuItem2.Name = "assembleToolStripMenuItem2";
+            this.assembleToolStripMenuItem2.Size = new System.Drawing.Size(85, 24);
+            this.assembleToolStripMenuItem2.Text = "Assemble";
+            this.assembleToolStripMenuItem2.Click += new System.EventHandler(this.assembleToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // newToolStripMenuItem
             // 
@@ -224,33 +294,19 @@
             this.assembleToolStripMenuItem1.Text = "Assemble";
             this.assembleToolStripMenuItem1.Click += new System.EventHandler(this.assembleToolStripMenuItem1_Click);
             // 
-            // newToolStripMenuItem2
+            // sourceCodeToolStripMenuItem
             // 
-            this.newToolStripMenuItem2.Name = "newToolStripMenuItem2";
-            this.newToolStripMenuItem2.Size = new System.Drawing.Size(51, 24);
-            this.newToolStripMenuItem2.Text = "New";
-            this.newToolStripMenuItem2.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
+            this.sourceCodeToolStripMenuItem.Name = "sourceCodeToolStripMenuItem";
+            this.sourceCodeToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.sourceCodeToolStripMenuItem.Text = "Source Code";
+            this.sourceCodeToolStripMenuItem.Click += new System.EventHandler(this.sourceCodeToolStripMenuItem_Click);
             // 
-            // saveToolStripMenuItem2
+            // assembledCodeToolStripMenuItem
             // 
-            this.saveToolStripMenuItem2.Name = "saveToolStripMenuItem2";
-            this.saveToolStripMenuItem2.Size = new System.Drawing.Size(52, 24);
-            this.saveToolStripMenuItem2.Text = "Save";
-            this.saveToolStripMenuItem2.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
-            // 
-            // loadToolStripMenuItem2
-            // 
-            this.loadToolStripMenuItem2.Name = "loadToolStripMenuItem2";
-            this.loadToolStripMenuItem2.Size = new System.Drawing.Size(54, 24);
-            this.loadToolStripMenuItem2.Text = "Load";
-            this.loadToolStripMenuItem2.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
-            // 
-            // assembleToolStripMenuItem2
-            // 
-            this.assembleToolStripMenuItem2.Name = "assembleToolStripMenuItem2";
-            this.assembleToolStripMenuItem2.Size = new System.Drawing.Size(85, 24);
-            this.assembleToolStripMenuItem2.Text = "Assemble";
-            this.assembleToolStripMenuItem2.Click += new System.EventHandler(this.assembleToolStripMenuItem_Click);
+            this.assembledCodeToolStripMenuItem.Name = "assembledCodeToolStripMenuItem";
+            this.assembledCodeToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.assembledCodeToolStripMenuItem.Text = "Assembled Code";
+            this.assembledCodeToolStripMenuItem.Click += new System.EventHandler(this.assembledCodeToolStripMenuItem_Click);
             // 
             // AssemblerForm
             // 
@@ -298,6 +354,12 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem assembleToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem instructionsDemoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem errorsDemoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sourceCodeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assembledCodeToolStripMenuItem;
     }
 }
 

@@ -61,6 +61,24 @@ namespace MIPS32.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///.
+        /// </summary>
+        internal static string errors_demo {
+            get {
+                return ResourceManager.GetString("errors_demo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add R 0 20
         ///addi I 8 null
         ///addiu I 9 null
@@ -104,6 +122,26 @@ namespace MIPS32.Properties {
         internal static string instructions {
             get {
                 return ResourceManager.GetString("instructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to add $t1 $t2 $t3
+        ///addi $s1 $t2 0xff
+        ///and $s4 $t3 $t1
+        ///sllv $t1 $t2 $a2
+        ///sll $t1 $t2 0xf
+        ///slti $t2 $s0 0xff
+        ///j 0x12
+        ///jalr $t0 $a1
+        ///lb $t0 0x12($t1)
+        ///div $t7 $t2
+        ///mfhi $t1
+        ///swc1 $t2 0x01($s1).
+        /// </summary>
+        internal static string instructions_demo {
+            get {
+                return ResourceManager.GetString("instructions_demo", resourceCulture);
             }
         }
         

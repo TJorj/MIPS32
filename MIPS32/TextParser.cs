@@ -209,7 +209,7 @@ namespace MIPS32
                     if (shamt.Count() < 5)
                         shamt = shamt.PadLeft(5, '0');
                     else
-                        throw new ParameterException("Parameter error for shift value");
+                        throw new ParameterException("Parameter error for shift value ");
                     RTypeStringGenerator(reg_src_generic, reg_tmp, reg_dest, shamt);
                 }
             }
@@ -380,7 +380,7 @@ namespace MIPS32
         {
             //converteste din hex in binar
             string binary_string;
-            binary_string = Convert.ToString(Convert.ToInt32(hex_string, 16), 2);
+            binary_string = Convert.ToString(Convert.ToInt64(hex_string, 16), 2);
             return binary_string;
         }
     }

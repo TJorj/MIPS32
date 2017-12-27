@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 namespace MIPS32
 {
@@ -99,47 +100,12 @@ namespace MIPS32
         }
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text File|*.txt";
-            saveFileDialog.Title = "Save Assembled Code";
-            saveFileDialog.FileName = "cod.txt";
-            if(saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string[] tmp = txtBoxMachineCode.Lines;
-                using (Stream s = File.Open(saveFileDialog.FileName, FileMode.Create))
-                using (StreamWriter sw = new StreamWriter(s))
-                {
-                    foreach (string line in tmp)
-                        sw.WriteLine(line);
-                }
-            }
+            
 
         }
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Stream stream = null;
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Load Instructions Code";
-            openFileDialog.Filter = "TXT files|*.txt";
-            openFileDialog.InitialDirectory = @"C:\";
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                if((stream = openFileDialog.OpenFile())!=null)
-                {
-                    txtBoxMnemonics.Clear();
-                    string line;
-                    using (stream)
-                    using (StreamReader sr = new StreamReader(stream))
-                    {
-                        while (!sr.EndOfStream)
-                        {
-                            line = sr.ReadLine();
-                            txtBoxMnemonics.AppendText(line);
-                            txtBoxMnemonics.AppendText(Environment.NewLine);
-                        }
-                    }
-                }
-            }
+            
              
         }
         private void UpdateControls(object sender, EventArgs e)
@@ -167,6 +133,113 @@ namespace MIPS32
         private void assembleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void customFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stream stream = null;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Load Instructions Code";
+            openFileDialog.Filter = "TXT files|*.txt";
+            openFileDialog.InitialDirectory = @"C:\";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if ((stream = openFileDialog.OpenFile()) != null)
+                {
+                    txtBoxMnemonics.Clear();
+                    string line;
+                    using (stream)
+                    using (StreamReader sr = new StreamReader(stream))
+                    {
+                        while (!sr.EndOfStream)
+                        {
+                            line = sr.ReadLine();
+                            txtBoxMnemonics.AppendText(line);
+                            txtBoxMnemonics.AppendText(Environment.NewLine);
+                        }
+                    }
+                }
+            }
+        }
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Todosi George Vasile\nGrupa 3131B\nCalculatoare\nAn 3","Author Info");
+        }
+
+        private void instructionsDemoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Any unsaved changes will be lost. Continue?", "Load File", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                txtBoxMnemonics.Clear();
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                using (Stream stream = assembly.GetManifestResourceStream("MIPS32.instructions_demo.txt"))
+                using (StreamReader inFile = new StreamReader(stream))
+                {
+                    while (!inFile.EndOfStream)
+                    {
+                        string line = inFile.ReadLine();
+                        txtBoxMnemonics.AppendText(line);
+                        txtBoxMnemonics.AppendText(Environment.NewLine);
+                    }
+                }
+            }
+        }
+
+        private void errorsDemoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Any unsaved changes will be lost. Continue?", "Load File", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                txtBoxMnemonics.Clear();
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                using (Stream stream = assembly.GetManifestResourceStream("MIPS32.errors_demo.txt"))
+                using (StreamReader inFile = new StreamReader(stream))
+                {
+                    while (!inFile.EndOfStream)
+                    {
+                        string line = inFile.ReadLine();
+                        txtBoxMnemonics.AppendText(line);
+                        txtBoxMnemonics.AppendText(Environment.NewLine);
+                    }
+                }
+            }
+        }
+
+        private void assembledCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text File|*.txt";
+            saveFileDialog.Title = "Save Assembled Code";
+            saveFileDialog.FileName = "assembled_code.txt";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string[] tmp = txtBoxMachineCode.Lines;
+                using (Stream s = File.Open(saveFileDialog.FileName, FileMode.Create))
+                using (StreamWriter sw = new StreamWriter(s))
+                {
+                    foreach (string line in tmp)
+                        sw.WriteLine(line);
+                }
+            }
+        }
+
+        private void sourceCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text File|*.txt";
+            saveFileDialog.Title = "Save Source Code";
+            saveFileDialog.FileName = "source_code.txt";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string[] tmp = txtBoxMnemonics.Lines;
+                using (Stream s = File.Open(saveFileDialog.FileName, FileMode.Create))
+                using (StreamWriter sw = new StreamWriter(s))
+                {
+                    foreach (string line in tmp)
+                        sw.WriteLine(line);
+                }
+            }
         }
     }
 
