@@ -106,7 +106,7 @@ namespace MIPS32
             if(saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string[] tmp = txtBoxMachineCode.Lines;
-                using (Stream s = File.Open(saveFileDialog.FileName, FileMode.CreateNew))
+                using (Stream s = File.Open(saveFileDialog.FileName, FileMode.Create))
                 using (StreamWriter sw = new StreamWriter(s))
                 {
                     foreach (string line in tmp)
@@ -127,11 +127,16 @@ namespace MIPS32
                 if((stream = openFileDialog.OpenFile())!=null)
                 {
                     txtBoxMnemonics.Clear();
+                    string line;
                     using (stream)
                     using (StreamReader sr = new StreamReader(stream))
                     {
-                        string line = sr.ReadLine();
-                        txtBoxMnemonics.AppendText(line);
+                        while (!sr.EndOfStream)
+                        {
+                            line = sr.ReadLine();
+                            txtBoxMnemonics.AppendText(line);
+                            txtBoxMnemonics.AppendText(Environment.NewLine);
+                        }
                     }
                 }
             }
