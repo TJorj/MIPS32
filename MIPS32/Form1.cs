@@ -146,6 +146,8 @@ namespace MIPS32
             {
                 if ((stream = openFileDialog.OpenFile()) != null)
                 {
+                    txtBoxErrors.Clear();
+                    txtBoxMachineCode.Clear();
                     txtBoxMnemonics.Clear();
                     string line;
                     using (stream)
@@ -171,6 +173,8 @@ namespace MIPS32
             DialogResult dialogResult = MessageBox.Show("Any unsaved changes will be lost. Continue?", "Load File", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                txtBoxMachineCode.Clear();
+                txtBoxErrors.Clear();
                 txtBoxMnemonics.Clear();
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 using (Stream stream = assembly.GetManifestResourceStream("MIPS32.instructions_demo.txt"))
@@ -191,6 +195,8 @@ namespace MIPS32
             DialogResult dialogResult = MessageBox.Show("Any unsaved changes will be lost. Continue?", "Load File", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                txtBoxMachineCode.Clear();
+                txtBoxErrors.Clear();
                 txtBoxMnemonics.Clear();
                 Assembly assembly = Assembly.GetExecutingAssembly();
                 using (Stream stream = assembly.GetManifestResourceStream("MIPS32.errors_demo.txt"))
