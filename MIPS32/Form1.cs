@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -246,6 +247,15 @@ namespace MIPS32
                         sw.WriteLine(line);
                 }
             }
+        }
+
+        private void simulateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SimulatorForm Form2 = new SimulatorForm();
+
+           
+            
+            Form2.Show();
         }
     }
 

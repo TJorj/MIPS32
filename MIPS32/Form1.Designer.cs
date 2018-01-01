@@ -31,12 +31,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.newToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sourceCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assembledCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.instructionsDemoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorsDemoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assembleToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simulateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,8 +55,6 @@
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.assembleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.sourceCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assembledCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelTxtBoxCode.SuspendLayout();
             this.panelTxtBoxMachine.SuspendLayout();
@@ -69,7 +70,8 @@
             this.saveToolStripMenuItem2,
             this.loadToolStripMenuItem2,
             this.assembleToolStripMenuItem2,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.simulateToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(982, 28);
@@ -93,6 +95,20 @@
             this.saveToolStripMenuItem2.Size = new System.Drawing.Size(52, 24);
             this.saveToolStripMenuItem2.Text = "Save";
             this.saveToolStripMenuItem2.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            // 
+            // sourceCodeToolStripMenuItem
+            // 
+            this.sourceCodeToolStripMenuItem.Name = "sourceCodeToolStripMenuItem";
+            this.sourceCodeToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.sourceCodeToolStripMenuItem.Text = "Source Code";
+            this.sourceCodeToolStripMenuItem.Click += new System.EventHandler(this.sourceCodeToolStripMenuItem_Click);
+            // 
+            // assembledCodeToolStripMenuItem
+            // 
+            this.assembledCodeToolStripMenuItem.Name = "assembledCodeToolStripMenuItem";
+            this.assembledCodeToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.assembledCodeToolStripMenuItem.Text = "Assembled Code";
+            this.assembledCodeToolStripMenuItem.Click += new System.EventHandler(this.assembledCodeToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem2
             // 
@@ -139,6 +155,13 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // simulateToolStripMenuItem
+            // 
+            this.simulateToolStripMenuItem.Name = "simulateToolStripMenuItem";
+            this.simulateToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.simulateToolStripMenuItem.Text = "Simulate";
+            this.simulateToolStripMenuItem.Click += new System.EventHandler(this.simulateToolStripMenuItem_Click);
             // 
             // newToolStripMenuItem
             // 
@@ -194,7 +217,7 @@
             this.txtBoxMnemonics.ShowLineNumbers = true;
             this.txtBoxMnemonics.Size = new System.Drawing.Size(457, 240);
             this.txtBoxMnemonics.TabIndex = 0;
-            this.txtBoxMnemonics.Text = "add $t1 $t2 $t3";
+            this.txtBoxMnemonics.Text = "add $t1 $t1 $t3\nj 0x0";
             // 
             // panelTxtBoxMachine
             // 
@@ -294,20 +317,6 @@
             this.assembleToolStripMenuItem1.Text = "Assemble";
             this.assembleToolStripMenuItem1.Click += new System.EventHandler(this.assembleToolStripMenuItem1_Click);
             // 
-            // sourceCodeToolStripMenuItem
-            // 
-            this.sourceCodeToolStripMenuItem.Name = "sourceCodeToolStripMenuItem";
-            this.sourceCodeToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
-            this.sourceCodeToolStripMenuItem.Text = "Source Code";
-            this.sourceCodeToolStripMenuItem.Click += new System.EventHandler(this.sourceCodeToolStripMenuItem_Click);
-            // 
-            // assembledCodeToolStripMenuItem
-            // 
-            this.assembledCodeToolStripMenuItem.Name = "assembledCodeToolStripMenuItem";
-            this.assembledCodeToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
-            this.assembledCodeToolStripMenuItem.Text = "Assembled Code";
-            this.assembledCodeToolStripMenuItem.Click += new System.EventHandler(this.assembledCodeToolStripMenuItem_Click);
-            // 
             // AssemblerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -360,6 +369,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sourceCodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assembledCodeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem simulateToolStripMenuItem;
     }
 }
 

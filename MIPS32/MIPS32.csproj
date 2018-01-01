@@ -64,6 +64,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registers.cs" />
     <Compile Include="RegisterType.cs" />
+    <Compile Include="SimulatorDictionary.cs" />
+    <Compile Include="SimulatorDisplayQueue.cs" />
+    <Compile Include="SimulatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimulatorForm.Designer.cs">
+      <DependentUpon>SimulatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimulatorParameters.cs" />
+    <Compile Include="SimulatorList.cs" />
     <Compile Include="TextParser.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -79,6 +89,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="instructions.txt" />
+    <EmbeddedResource Include="SimulatorForm.resx">
+      <DependentUpon>SimulatorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

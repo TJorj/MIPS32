@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -24,6 +26,7 @@ namespace MIPS32
         private const string reg_src_generic = "noregister";
         private const string reg_tmp_generic = "noregister";
         private const string immediate_generic = "";
+        
         
 
         public static string LineParse(string text)
@@ -227,6 +230,8 @@ namespace MIPS32
                 reg_src = matches[1].Value.Replace(" ", "");
                 reg_tmp = matches[2].Value.Replace(" ", "");
                 RTypeStringGenerator(reg_src, reg_tmp, reg_dest, shamt_generic);
+                SimulatorDisplayQueue.InstructionsDispaly.Enqueue(_text);
+          
             }
             else
                 throw new ParameterException("Parameter count error");
@@ -274,6 +279,7 @@ namespace MIPS32
                 throw new ParameterException("Parameter error for " + _reg_dest);
             }
             parsed_string += _shamt + " " + Instructions.Collections[nume_instr].Funct;
+            SimulatorList.ListToExecute.Add(new SimulatorParameters(_reg_src,_reg_tmp,_reg_dest, _shamt,immediate_generic, nume_instr));
         }
         private static void ITypeGenericParser(string _text)
         {
@@ -370,10 +376,15 @@ namespace MIPS32
                 //completeaza valoarea cu 0 sau exceptie daca depaseste marimea 
                 jmp_adr = HexToBinary(matches[0].Value.Replace(" ", ""));
                 if (jmp_adr.Count() < 26)
-                   jmp_adr = jmp_adr.PadLeft(26, '0');
+                {
+                    SimulatorList.ListToExecute.Add(new SimulatorParameters("", "", "", "", jmp_adr, nume_instr));
+                    jmp_adr = jmp_adr.PadLeft(26, '0');
+                }
                 else
                     throw new ParameterException("Parameter error for jump adress");
                 parsed_string += jmp_adr ;
+                SimulatorDisplayQueue.InstructionsDispaly.Enqueue(_text);
+               
             }
         }
         private static string HexToBinary(string hex_string)
