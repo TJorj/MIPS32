@@ -34,6 +34,8 @@ namespace MIPS32
 
         private void assembleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SimulatorDisplayQueue.Clear();
+            SimulatorList.ListToExecute.Clear();
             txtBoxMachineCode.Clear();
             txtBoxErrors.Clear();
             for (int i = 0; i < txtBoxMnemonics.Lines.Count(); i++)

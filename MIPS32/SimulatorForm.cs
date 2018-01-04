@@ -20,9 +20,9 @@ namespace MIPS32
             InitializeComponent();
             string tmp_instr;
             int tmp_pc = -4;
-            while (SimulatorDisplayQueue.InstructionsDispaly.Count != 0)
+            while (SimulatorDisplayQueue.InstructionsDisplay.Count != 0)
             {
-                tmp_instr = SimulatorDisplayQueue.InstructionsDispaly.Dequeue();
+                tmp_instr = SimulatorDisplayQueue.InstructionsDisplay.Dequeue();
                 txtBoxInstr.AppendText(tmp_instr);
                 txtBoxInstr.AppendText(Environment.NewLine);
 
@@ -31,7 +31,7 @@ namespace MIPS32
                 txtBoxPC.AppendText(Environment.NewLine);
             }
             ColorCurrentLine(i, Color.Red);
-            pc.Text = SimulatorList.ListToExecute[i].pc
+            pc.Text = SimulatorList.ListToExecute[i].pc;
             t1.Text = "3";
             t2.Text = "1";
             t3.Text = "1";
@@ -95,6 +95,11 @@ namespace MIPS32
             var length = lines[i].Length;
             txtBoxInstr.Select(start, length);
             txtBoxInstr.SelectionBackColor = color;
+        }
+        private void OnClose(object sender, EventArgs e)
+        {
+            SimulatorDisplayQueue.Clear();
+            SimulatorList.ListToExecute.Clear();
         }
     }
 }

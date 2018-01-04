@@ -230,7 +230,7 @@ namespace MIPS32
                 reg_src = matches[1].Value.Replace(" ", "");
                 reg_tmp = matches[2].Value.Replace(" ", "");
                 RTypeStringGenerator(reg_src, reg_tmp, reg_dest, shamt_generic);
-                SimulatorDisplayQueue.InstructionsDispaly.Enqueue(_text);
+                SimulatorDisplayQueue.InstructionsDisplay.Enqueue(_text);
           
             }
             else
@@ -383,7 +383,7 @@ namespace MIPS32
                 else
                     throw new ParameterException("Parameter error for jump adress");
                 parsed_string += jmp_adr ;
-                SimulatorDisplayQueue.InstructionsDispaly.Enqueue(_text);
+                SimulatorDisplayQueue.InstructionsDisplay.Enqueue(_text);
                
             }
         }
