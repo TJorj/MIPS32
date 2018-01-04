@@ -394,5 +394,9 @@ namespace MIPS32
             binary_string = Convert.ToString(Convert.ToInt64(hex_string, 16), 2);
             return binary_string;
         }
+        public static string GetGenericRegisterName()
+        {
+            return reg_dest_generic;
+        }
     }
 }

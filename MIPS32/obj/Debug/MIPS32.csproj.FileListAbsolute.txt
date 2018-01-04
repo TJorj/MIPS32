@@ -8,7 +8,6 @@ C:\Users\TGeorge\Dropbox\SOC\MIPS32\MIPS32\obj\Debug\MIPS32.csproj.GenerateResou
 C:\Users\TGeorge\Dropbox\SOC\MIPS32\MIPS32\obj\Debug\MIPS32.csproj.CoreCompileInputs.cache
 C:\Users\TGeorge\Dropbox\SOC\MIPS32\MIPS32\obj\Debug\MIPS32.exe
 C:\Users\TGeorge\Dropbox\SOC\MIPS32\MIPS32\obj\Debug\MIPS32.pdb
-C:\Users\TGeorge\Dropbox\SOC\MIPS32\MIPS32\obj\Debug\MIPS32.csprojResolveAssemblyReference.cache
 C:\Users\TGeorge\Desktop\MIPS32\MIPS32\obj\Debug\MIPS32.csprojResolveAssemblyReference.cache
 C:\Users\TGeorge\Desktop\MIPS32\MIPS32\obj\Debug\MIPS32.AssemblerForm.resources
 C:\Users\TGeorge\Desktop\MIPS32\MIPS32\obj\Debug\MIPS32.Properties.Resources.resources

@@ -18,17 +18,17 @@ namespace MIPS32
                 return pc;
             }
         }
-        public int pc;   
-        public string rs, rt, rd, shamt, operation, immediate;
+        public string pc;   
+        public string rs_name, rt_name, rd_name, shamt, operation, immediate, rs_value, rt_value, rd_value;
         public SimulatorParameters(string _rs, string _rt, string _rd, string _shamt, string _immediate, string _operation)
         {
-            rs = _rs;
-            rd = _rd;
-            rt = _rt;
+            rs_name = _rs.Trim('$');
+            rd_name = _rd.Trim('$');
+            rt_name = _rt.Trim('$');
             shamt = _shamt;
             operation = _operation;
             immediate = _immediate;
-            pc = Counter.increment();
+            pc = Counter.increment().ToString();
         }
     }
 }

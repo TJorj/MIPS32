@@ -55,6 +55,7 @@
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.assembleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.simulatorDemoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelTxtBoxCode.SuspendLayout();
             this.panelTxtBoxMachine.SuspendLayout();
@@ -70,8 +71,8 @@
             this.saveToolStripMenuItem2,
             this.loadToolStripMenuItem2,
             this.assembleToolStripMenuItem2,
-            this.aboutToolStripMenuItem,
-            this.simulateToolStripMenuItem});
+            this.simulateToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(982, 28);
@@ -115,6 +116,7 @@
             this.loadToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.instructionsDemoToolStripMenuItem,
             this.errorsDemoToolStripMenuItem,
+            this.simulatorDemoToolStripMenuItem,
             this.customFileToolStripMenuItem});
             this.loadToolStripMenuItem2.Name = "loadToolStripMenuItem2";
             this.loadToolStripMenuItem2.Size = new System.Drawing.Size(54, 24);
@@ -317,6 +319,12 @@
             this.assembleToolStripMenuItem1.Text = "Assemble";
             this.assembleToolStripMenuItem1.Click += new System.EventHandler(this.assembleToolStripMenuItem1_Click);
             // 
+            // simulatorDemoToolStripMenuItem
+            // 
+            this.simulatorDemoToolStripMenuItem.Name = "simulatorDemoToolStripMenuItem";
+            this.simulatorDemoToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.simulatorDemoToolStripMenuItem.Text = "Simulator Demo";
+            // 
             // AssemblerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -370,6 +378,7 @@
         private System.Windows.Forms.ToolStripMenuItem sourceCodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assembledCodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem simulateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem simulatorDemoToolStripMenuItem;
     }
 }
 

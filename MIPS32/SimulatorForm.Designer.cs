@@ -45,16 +45,16 @@
             this.t1 = new Ionic.WinForms.RichTextBoxEx();
             this.t2 = new Ionic.WinForms.RichTextBoxEx();
             this.t3 = new Ionic.WinForms.RichTextBoxEx();
-            this.richTextBoxEx4 = new Ionic.WinForms.RichTextBoxEx();
-            this.richTextBoxEx5 = new Ionic.WinForms.RichTextBoxEx();
-            this.richTextBoxEx6 = new Ionic.WinForms.RichTextBoxEx();
-            this.richTextBoxEx7 = new Ionic.WinForms.RichTextBoxEx();
-            this.richTextBoxEx8 = new Ionic.WinForms.RichTextBoxEx();
-            this.richTextBoxEx9 = new Ionic.WinForms.RichTextBoxEx();
-            this.richTextBoxEx10 = new Ionic.WinForms.RichTextBoxEx();
+            this.t4 = new Ionic.WinForms.RichTextBoxEx();
+            this.t5 = new Ionic.WinForms.RichTextBoxEx();
+            this.t6 = new Ionic.WinForms.RichTextBoxEx();
+            this.t7 = new Ionic.WinForms.RichTextBoxEx();
+            this.t8 = new Ionic.WinForms.RichTextBoxEx();
+            this.t9 = new Ionic.WinForms.RichTextBoxEx();
             this.txtBoxInstr = new Ionic.WinForms.RichTextBoxEx();
             this.txtBoxPC = new Ionic.WinForms.RichTextBoxEx();
             this.lblDebugger = new System.Windows.Forms.Label();
+            this.pc = new Ionic.WinForms.RichTextBoxEx();
             this.SuspendLayout();
             // 
             // lblProgramCounter
@@ -78,7 +78,7 @@
             // lblRegisters
             // 
             this.lblRegisters.AutoSize = true;
-            this.lblRegisters.Location = new System.Drawing.Point(753, 13);
+            this.lblRegisters.Location = new System.Drawing.Point(799, 9);
             this.lblRegisters.Name = "lblRegisters";
             this.lblRegisters.Size = new System.Drawing.Size(68, 17);
             this.lblRegisters.TabIndex = 2;
@@ -89,96 +89,96 @@
             this.lblT1.AutoSize = true;
             this.lblT1.Location = new System.Drawing.Point(718, 42);
             this.lblT1.Name = "lblT1";
-            this.lblT1.Size = new System.Drawing.Size(28, 17);
+            this.lblT1.Size = new System.Drawing.Size(25, 17);
             this.lblT1.TabIndex = 3;
-            this.lblT1.Text = "$t1";
+            this.lblT1.Text = "T1";
             // 
             // lblT2
             // 
             this.lblT2.AutoSize = true;
             this.lblT2.Location = new System.Drawing.Point(718, 69);
             this.lblT2.Name = "lblT2";
-            this.lblT2.Size = new System.Drawing.Size(28, 17);
+            this.lblT2.Size = new System.Drawing.Size(25, 17);
             this.lblT2.TabIndex = 4;
-            this.lblT2.Text = "$t2";
+            this.lblT2.Text = "T2";
             // 
             // lblT3
             // 
             this.lblT3.AutoSize = true;
             this.lblT3.Location = new System.Drawing.Point(718, 100);
             this.lblT3.Name = "lblT3";
-            this.lblT3.Size = new System.Drawing.Size(28, 17);
+            this.lblT3.Size = new System.Drawing.Size(25, 17);
             this.lblT3.TabIndex = 5;
-            this.lblT3.Text = "$t3";
+            this.lblT3.Text = "T3";
             // 
             // lblT4
             // 
             this.lblT4.AutoSize = true;
             this.lblT4.Location = new System.Drawing.Point(718, 134);
             this.lblT4.Name = "lblT4";
-            this.lblT4.Size = new System.Drawing.Size(41, 17);
+            this.lblT4.Size = new System.Drawing.Size(25, 17);
             this.lblT4.TabIndex = 6;
-            this.lblT4.Text = "T4 = ";
+            this.lblT4.Text = "T4";
             // 
             // lblT5
             // 
             this.lblT5.AutoSize = true;
             this.lblT5.Location = new System.Drawing.Point(718, 164);
             this.lblT5.Name = "lblT5";
-            this.lblT5.Size = new System.Drawing.Size(41, 17);
+            this.lblT5.Size = new System.Drawing.Size(25, 17);
             this.lblT5.TabIndex = 7;
-            this.lblT5.Text = "T5 = ";
+            this.lblT5.Text = "T5";
             // 
             // lblT6
             // 
             this.lblT6.AutoSize = true;
             this.lblT6.Location = new System.Drawing.Point(718, 195);
             this.lblT6.Name = "lblT6";
-            this.lblT6.Size = new System.Drawing.Size(41, 17);
+            this.lblT6.Size = new System.Drawing.Size(25, 17);
             this.lblT6.TabIndex = 8;
-            this.lblT6.Text = "T6 = ";
+            this.lblT6.Text = "T6";
             // 
             // lblT7
             // 
             this.lblT7.AutoSize = true;
             this.lblT7.Location = new System.Drawing.Point(718, 221);
             this.lblT7.Name = "lblT7";
-            this.lblT7.Size = new System.Drawing.Size(41, 17);
+            this.lblT7.Size = new System.Drawing.Size(25, 17);
             this.lblT7.TabIndex = 9;
-            this.lblT7.Text = "T7 = ";
+            this.lblT7.Text = "T7";
             // 
             // lblT8
             // 
             this.lblT8.AutoSize = true;
             this.lblT8.Location = new System.Drawing.Point(718, 255);
             this.lblT8.Name = "lblT8";
-            this.lblT8.Size = new System.Drawing.Size(41, 17);
+            this.lblT8.Size = new System.Drawing.Size(25, 17);
             this.lblT8.TabIndex = 10;
-            this.lblT8.Text = "T8 = ";
+            this.lblT8.Text = "T8";
             // 
             // lblT9
             // 
             this.lblT9.AutoSize = true;
             this.lblT9.Location = new System.Drawing.Point(718, 287);
             this.lblT9.Name = "lblT9";
-            this.lblT9.Size = new System.Drawing.Size(41, 17);
+            this.lblT9.Size = new System.Drawing.Size(25, 17);
             this.lblT9.TabIndex = 11;
-            this.lblT9.Text = "T9 = ";
+            this.lblT9.Text = "T9";
             // 
             // lblT10
             // 
             this.lblT10.AutoSize = true;
-            this.lblT10.Location = new System.Drawing.Point(718, 319);
+            this.lblT10.Location = new System.Drawing.Point(485, 42);
             this.lblT10.Name = "lblT10";
-            this.lblT10.Size = new System.Drawing.Size(49, 17);
+            this.lblT10.Size = new System.Drawing.Size(26, 17);
             this.lblT10.TabIndex = 12;
-            this.lblT10.Text = "T10 = ";
+            this.lblT10.Text = "PC";
             // 
             // btnExecute
             // 
             this.btnExecute.Location = new System.Drawing.Point(371, 337);
             this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(161, 23);
+            this.btnExecute.Size = new System.Drawing.Size(161, 31);
             this.btnExecute.TabIndex = 13;
             this.btnExecute.Text = "Execute Instruction";
             this.btnExecute.UseVisualStyleBackColor = true;
@@ -241,138 +241,119 @@
             this.t3.TabIndex = 16;
             this.t3.Text = "";
             // 
-            // richTextBoxEx4
+            // t4
             // 
-            this.richTextBoxEx4.Location = new System.Drawing.Point(765, 125);
-            this.richTextBoxEx4.Name = "richTextBoxEx4";
-            this.richTextBoxEx4.NumberAlignment = System.Drawing.StringAlignment.Center;
-            this.richTextBoxEx4.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
-            this.richTextBoxEx4.NumberBackground2 = System.Drawing.SystemColors.Window;
-            this.richTextBoxEx4.NumberBorder = System.Drawing.SystemColors.ControlDark;
-            this.richTextBoxEx4.NumberBorderThickness = 1F;
-            this.richTextBoxEx4.NumberColor = System.Drawing.Color.DarkGray;
-            this.richTextBoxEx4.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEx4.NumberLeadingZeroes = false;
-            this.richTextBoxEx4.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
-            this.richTextBoxEx4.NumberPadding = 2;
-            this.richTextBoxEx4.ShowLineNumbers = false;
-            this.richTextBoxEx4.Size = new System.Drawing.Size(146, 26);
-            this.richTextBoxEx4.TabIndex = 17;
-            this.richTextBoxEx4.Text = "";
+            this.t4.Location = new System.Drawing.Point(765, 125);
+            this.t4.Name = "t4";
+            this.t4.NumberAlignment = System.Drawing.StringAlignment.Center;
+            this.t4.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
+            this.t4.NumberBackground2 = System.Drawing.SystemColors.Window;
+            this.t4.NumberBorder = System.Drawing.SystemColors.ControlDark;
+            this.t4.NumberBorderThickness = 1F;
+            this.t4.NumberColor = System.Drawing.Color.DarkGray;
+            this.t4.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t4.NumberLeadingZeroes = false;
+            this.t4.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
+            this.t4.NumberPadding = 2;
+            this.t4.ShowLineNumbers = false;
+            this.t4.Size = new System.Drawing.Size(146, 26);
+            this.t4.TabIndex = 17;
+            this.t4.Text = "";
             // 
-            // richTextBoxEx5
+            // t5
             // 
-            this.richTextBoxEx5.Location = new System.Drawing.Point(765, 155);
-            this.richTextBoxEx5.Name = "richTextBoxEx5";
-            this.richTextBoxEx5.NumberAlignment = System.Drawing.StringAlignment.Center;
-            this.richTextBoxEx5.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
-            this.richTextBoxEx5.NumberBackground2 = System.Drawing.SystemColors.Window;
-            this.richTextBoxEx5.NumberBorder = System.Drawing.SystemColors.ControlDark;
-            this.richTextBoxEx5.NumberBorderThickness = 1F;
-            this.richTextBoxEx5.NumberColor = System.Drawing.Color.DarkGray;
-            this.richTextBoxEx5.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEx5.NumberLeadingZeroes = false;
-            this.richTextBoxEx5.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
-            this.richTextBoxEx5.NumberPadding = 2;
-            this.richTextBoxEx5.ShowLineNumbers = false;
-            this.richTextBoxEx5.Size = new System.Drawing.Size(146, 26);
-            this.richTextBoxEx5.TabIndex = 18;
-            this.richTextBoxEx5.Text = "";
+            this.t5.Location = new System.Drawing.Point(765, 155);
+            this.t5.Name = "t5";
+            this.t5.NumberAlignment = System.Drawing.StringAlignment.Center;
+            this.t5.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
+            this.t5.NumberBackground2 = System.Drawing.SystemColors.Window;
+            this.t5.NumberBorder = System.Drawing.SystemColors.ControlDark;
+            this.t5.NumberBorderThickness = 1F;
+            this.t5.NumberColor = System.Drawing.Color.DarkGray;
+            this.t5.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t5.NumberLeadingZeroes = false;
+            this.t5.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
+            this.t5.NumberPadding = 2;
+            this.t5.ShowLineNumbers = false;
+            this.t5.Size = new System.Drawing.Size(146, 26);
+            this.t5.TabIndex = 18;
+            this.t5.Text = "";
             // 
-            // richTextBoxEx6
+            // t6
             // 
-            this.richTextBoxEx6.Location = new System.Drawing.Point(765, 186);
-            this.richTextBoxEx6.Name = "richTextBoxEx6";
-            this.richTextBoxEx6.NumberAlignment = System.Drawing.StringAlignment.Center;
-            this.richTextBoxEx6.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
-            this.richTextBoxEx6.NumberBackground2 = System.Drawing.SystemColors.Window;
-            this.richTextBoxEx6.NumberBorder = System.Drawing.SystemColors.ControlDark;
-            this.richTextBoxEx6.NumberBorderThickness = 1F;
-            this.richTextBoxEx6.NumberColor = System.Drawing.Color.DarkGray;
-            this.richTextBoxEx6.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEx6.NumberLeadingZeroes = false;
-            this.richTextBoxEx6.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
-            this.richTextBoxEx6.NumberPadding = 2;
-            this.richTextBoxEx6.ShowLineNumbers = false;
-            this.richTextBoxEx6.Size = new System.Drawing.Size(146, 26);
-            this.richTextBoxEx6.TabIndex = 19;
-            this.richTextBoxEx6.Text = "";
+            this.t6.Location = new System.Drawing.Point(765, 186);
+            this.t6.Name = "t6";
+            this.t6.NumberAlignment = System.Drawing.StringAlignment.Center;
+            this.t6.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
+            this.t6.NumberBackground2 = System.Drawing.SystemColors.Window;
+            this.t6.NumberBorder = System.Drawing.SystemColors.ControlDark;
+            this.t6.NumberBorderThickness = 1F;
+            this.t6.NumberColor = System.Drawing.Color.DarkGray;
+            this.t6.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t6.NumberLeadingZeroes = false;
+            this.t6.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
+            this.t6.NumberPadding = 2;
+            this.t6.ShowLineNumbers = false;
+            this.t6.Size = new System.Drawing.Size(146, 26);
+            this.t6.TabIndex = 19;
+            this.t6.Text = "";
             // 
-            // richTextBoxEx7
+            // t7
             // 
-            this.richTextBoxEx7.Location = new System.Drawing.Point(765, 218);
-            this.richTextBoxEx7.Name = "richTextBoxEx7";
-            this.richTextBoxEx7.NumberAlignment = System.Drawing.StringAlignment.Center;
-            this.richTextBoxEx7.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
-            this.richTextBoxEx7.NumberBackground2 = System.Drawing.SystemColors.Window;
-            this.richTextBoxEx7.NumberBorder = System.Drawing.SystemColors.ControlDark;
-            this.richTextBoxEx7.NumberBorderThickness = 1F;
-            this.richTextBoxEx7.NumberColor = System.Drawing.Color.DarkGray;
-            this.richTextBoxEx7.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEx7.NumberLeadingZeroes = false;
-            this.richTextBoxEx7.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
-            this.richTextBoxEx7.NumberPadding = 2;
-            this.richTextBoxEx7.ShowLineNumbers = false;
-            this.richTextBoxEx7.Size = new System.Drawing.Size(146, 26);
-            this.richTextBoxEx7.TabIndex = 20;
-            this.richTextBoxEx7.Text = "";
+            this.t7.Location = new System.Drawing.Point(765, 218);
+            this.t7.Name = "t7";
+            this.t7.NumberAlignment = System.Drawing.StringAlignment.Center;
+            this.t7.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
+            this.t7.NumberBackground2 = System.Drawing.SystemColors.Window;
+            this.t7.NumberBorder = System.Drawing.SystemColors.ControlDark;
+            this.t7.NumberBorderThickness = 1F;
+            this.t7.NumberColor = System.Drawing.Color.DarkGray;
+            this.t7.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t7.NumberLeadingZeroes = false;
+            this.t7.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
+            this.t7.NumberPadding = 2;
+            this.t7.ShowLineNumbers = false;
+            this.t7.Size = new System.Drawing.Size(146, 26);
+            this.t7.TabIndex = 20;
+            this.t7.Text = "";
             // 
-            // richTextBoxEx8
+            // t8
             // 
-            this.richTextBoxEx8.Location = new System.Drawing.Point(765, 252);
-            this.richTextBoxEx8.Name = "richTextBoxEx8";
-            this.richTextBoxEx8.NumberAlignment = System.Drawing.StringAlignment.Center;
-            this.richTextBoxEx8.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
-            this.richTextBoxEx8.NumberBackground2 = System.Drawing.SystemColors.Window;
-            this.richTextBoxEx8.NumberBorder = System.Drawing.SystemColors.ControlDark;
-            this.richTextBoxEx8.NumberBorderThickness = 1F;
-            this.richTextBoxEx8.NumberColor = System.Drawing.Color.DarkGray;
-            this.richTextBoxEx8.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEx8.NumberLeadingZeroes = false;
-            this.richTextBoxEx8.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
-            this.richTextBoxEx8.NumberPadding = 2;
-            this.richTextBoxEx8.ShowLineNumbers = false;
-            this.richTextBoxEx8.Size = new System.Drawing.Size(146, 26);
-            this.richTextBoxEx8.TabIndex = 21;
-            this.richTextBoxEx8.Text = "";
+            this.t8.Location = new System.Drawing.Point(765, 252);
+            this.t8.Name = "t8";
+            this.t8.NumberAlignment = System.Drawing.StringAlignment.Center;
+            this.t8.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
+            this.t8.NumberBackground2 = System.Drawing.SystemColors.Window;
+            this.t8.NumberBorder = System.Drawing.SystemColors.ControlDark;
+            this.t8.NumberBorderThickness = 1F;
+            this.t8.NumberColor = System.Drawing.Color.DarkGray;
+            this.t8.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t8.NumberLeadingZeroes = false;
+            this.t8.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
+            this.t8.NumberPadding = 2;
+            this.t8.ShowLineNumbers = false;
+            this.t8.Size = new System.Drawing.Size(146, 26);
+            this.t8.TabIndex = 21;
+            this.t8.Text = "";
             // 
-            // richTextBoxEx9
+            // t9
             // 
-            this.richTextBoxEx9.Location = new System.Drawing.Point(765, 284);
-            this.richTextBoxEx9.Name = "richTextBoxEx9";
-            this.richTextBoxEx9.NumberAlignment = System.Drawing.StringAlignment.Center;
-            this.richTextBoxEx9.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
-            this.richTextBoxEx9.NumberBackground2 = System.Drawing.SystemColors.Window;
-            this.richTextBoxEx9.NumberBorder = System.Drawing.SystemColors.ControlDark;
-            this.richTextBoxEx9.NumberBorderThickness = 1F;
-            this.richTextBoxEx9.NumberColor = System.Drawing.Color.DarkGray;
-            this.richTextBoxEx9.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEx9.NumberLeadingZeroes = false;
-            this.richTextBoxEx9.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
-            this.richTextBoxEx9.NumberPadding = 2;
-            this.richTextBoxEx9.ShowLineNumbers = false;
-            this.richTextBoxEx9.Size = new System.Drawing.Size(146, 26);
-            this.richTextBoxEx9.TabIndex = 22;
-            this.richTextBoxEx9.Text = "";
-            // 
-            // richTextBoxEx10
-            // 
-            this.richTextBoxEx10.Location = new System.Drawing.Point(765, 316);
-            this.richTextBoxEx10.Name = "richTextBoxEx10";
-            this.richTextBoxEx10.NumberAlignment = System.Drawing.StringAlignment.Center;
-            this.richTextBoxEx10.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
-            this.richTextBoxEx10.NumberBackground2 = System.Drawing.SystemColors.Window;
-            this.richTextBoxEx10.NumberBorder = System.Drawing.SystemColors.ControlDark;
-            this.richTextBoxEx10.NumberBorderThickness = 1F;
-            this.richTextBoxEx10.NumberColor = System.Drawing.Color.DarkGray;
-            this.richTextBoxEx10.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEx10.NumberLeadingZeroes = false;
-            this.richTextBoxEx10.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
-            this.richTextBoxEx10.NumberPadding = 2;
-            this.richTextBoxEx10.ShowLineNumbers = false;
-            this.richTextBoxEx10.Size = new System.Drawing.Size(146, 26);
-            this.richTextBoxEx10.TabIndex = 23;
-            this.richTextBoxEx10.Text = "";
+            this.t9.Location = new System.Drawing.Point(765, 284);
+            this.t9.Name = "t9";
+            this.t9.NumberAlignment = System.Drawing.StringAlignment.Center;
+            this.t9.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
+            this.t9.NumberBackground2 = System.Drawing.SystemColors.Window;
+            this.t9.NumberBorder = System.Drawing.SystemColors.ControlDark;
+            this.t9.NumberBorderThickness = 1F;
+            this.t9.NumberColor = System.Drawing.Color.DarkGray;
+            this.t9.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t9.NumberLeadingZeroes = false;
+            this.t9.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
+            this.t9.NumberPadding = 2;
+            this.t9.ShowLineNumbers = false;
+            this.t9.Size = new System.Drawing.Size(146, 26);
+            this.t9.TabIndex = 22;
+            this.t9.Text = "";
             // 
             // txtBoxInstr
             // 
@@ -388,6 +369,7 @@
             this.txtBoxInstr.NumberLeadingZeroes = false;
             this.txtBoxInstr.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
             this.txtBoxInstr.NumberPadding = 2;
+            this.txtBoxInstr.ReadOnly = true;
             this.txtBoxInstr.ShowLineNumbers = false;
             this.txtBoxInstr.Size = new System.Drawing.Size(448, 234);
             this.txtBoxInstr.TabIndex = 24;
@@ -407,6 +389,7 @@
             this.txtBoxPC.NumberLeadingZeroes = false;
             this.txtBoxPC.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
             this.txtBoxPC.NumberPadding = 2;
+            this.txtBoxPC.ReadOnly = true;
             this.txtBoxPC.ShowLineNumbers = false;
             this.txtBoxPC.Size = new System.Drawing.Size(209, 234);
             this.txtBoxPC.TabIndex = 25;
@@ -415,11 +398,30 @@
             // lblDebugger
             // 
             this.lblDebugger.AutoSize = true;
+            this.lblDebugger.ForeColor = System.Drawing.Color.Red;
             this.lblDebugger.Location = new System.Drawing.Point(50, 25);
             this.lblDebugger.Name = "lblDebugger";
-            this.lblDebugger.Size = new System.Drawing.Size(71, 17);
+            this.lblDebugger.Size = new System.Drawing.Size(0, 17);
             this.lblDebugger.TabIndex = 26;
-            this.lblDebugger.Text = "Denugger";
+            // 
+            // pc
+            // 
+            this.pc.Location = new System.Drawing.Point(529, 39);
+            this.pc.Name = "pc";
+            this.pc.NumberAlignment = System.Drawing.StringAlignment.Center;
+            this.pc.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
+            this.pc.NumberBackground2 = System.Drawing.SystemColors.Window;
+            this.pc.NumberBorder = System.Drawing.SystemColors.ControlDark;
+            this.pc.NumberBorderThickness = 1F;
+            this.pc.NumberColor = System.Drawing.Color.DarkGray;
+            this.pc.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pc.NumberLeadingZeroes = false;
+            this.pc.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
+            this.pc.NumberPadding = 2;
+            this.pc.ShowLineNumbers = false;
+            this.pc.Size = new System.Drawing.Size(146, 26);
+            this.pc.TabIndex = 23;
+            this.pc.Text = "";
             // 
             // SimulatorForm
             // 
@@ -429,13 +431,13 @@
             this.Controls.Add(this.lblDebugger);
             this.Controls.Add(this.txtBoxPC);
             this.Controls.Add(this.txtBoxInstr);
-            this.Controls.Add(this.richTextBoxEx10);
-            this.Controls.Add(this.richTextBoxEx9);
-            this.Controls.Add(this.richTextBoxEx8);
-            this.Controls.Add(this.richTextBoxEx7);
-            this.Controls.Add(this.richTextBoxEx6);
-            this.Controls.Add(this.richTextBoxEx5);
-            this.Controls.Add(this.richTextBoxEx4);
+            this.Controls.Add(this.pc);
+            this.Controls.Add(this.t9);
+            this.Controls.Add(this.t8);
+            this.Controls.Add(this.t7);
+            this.Controls.Add(this.t6);
+            this.Controls.Add(this.t5);
+            this.Controls.Add(this.t4);
             this.Controls.Add(this.t3);
             this.Controls.Add(this.t2);
             this.Controls.Add(this.t1);
@@ -479,15 +481,15 @@
         private Ionic.WinForms.RichTextBoxEx t1;
         private Ionic.WinForms.RichTextBoxEx t2;
         private Ionic.WinForms.RichTextBoxEx t3;
-        private Ionic.WinForms.RichTextBoxEx richTextBoxEx4;
-        private Ionic.WinForms.RichTextBoxEx richTextBoxEx5;
-        private Ionic.WinForms.RichTextBoxEx richTextBoxEx6;
-        private Ionic.WinForms.RichTextBoxEx richTextBoxEx7;
-        private Ionic.WinForms.RichTextBoxEx richTextBoxEx8;
-        private Ionic.WinForms.RichTextBoxEx richTextBoxEx9;
-        private Ionic.WinForms.RichTextBoxEx richTextBoxEx10;
+        private Ionic.WinForms.RichTextBoxEx t4;
+        private Ionic.WinForms.RichTextBoxEx t5;
+        private Ionic.WinForms.RichTextBoxEx t6;
+        private Ionic.WinForms.RichTextBoxEx t7;
+        private Ionic.WinForms.RichTextBoxEx t8;
+        private Ionic.WinForms.RichTextBoxEx t9;
         private Ionic.WinForms.RichTextBoxEx txtBoxInstr;
         private Ionic.WinForms.RichTextBoxEx txtBoxPC;
         private System.Windows.Forms.Label lblDebugger;
+        private Ionic.WinForms.RichTextBoxEx pc;
     }
 }
