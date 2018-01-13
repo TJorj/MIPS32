@@ -114,5 +114,8 @@
   <ItemGroup>
     <EmbeddedResource Include="errors_demo.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="simulator_demo.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

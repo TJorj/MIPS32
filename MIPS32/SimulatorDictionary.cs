@@ -28,7 +28,16 @@ namespace MIPS32
         }
         private static void jump(SimulatorParameters Sim)
         {
-            Sim.immediate = Convert.ToInt32(Sim.immediate,2).ToString();
+            try
+            {
+                Sim.immediate = Convert.ToInt32(Sim.immediate, 2).ToString();
+            }
+            catch(Exception)
+            {
+                //in cazul instructiunilor jump adresa immediate primita in binar este 
+                //convertita in zecimal la prima executare a instructiunii si
+                //se arunca exceptie la urmatoarele executari deoarece stringul nu mai e in binar
+            }
         }
         private static void sub(SimulatorParameters Sim)
         {

@@ -479,7 +479,7 @@
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblProgramCounter);
             this.Name = "SimulatorForm";
-            this.Text = "SimulatorForm";
+            this.Text = "Simulator";
             this.ResumeLayout(false);
             this.PerformLayout();
 

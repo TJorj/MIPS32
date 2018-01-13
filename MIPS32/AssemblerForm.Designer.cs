@@ -142,6 +142,7 @@
             this.simulatorDemoToolStripMenuItem.Name = "simulatorDemoToolStripMenuItem";
             this.simulatorDemoToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.simulatorDemoToolStripMenuItem.Text = "Simulator Demo";
+            this.simulatorDemoToolStripMenuItem.Click += new System.EventHandler(this.simulatorDemoToolStripMenuItem_Click);
             // 
             // customFileToolStripMenuItem
             // 

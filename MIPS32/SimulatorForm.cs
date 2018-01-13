@@ -54,7 +54,7 @@ namespace MIPS32
             }
             catch(Exception)
             {
-                lblDebugger.Text = "Unimplemented operation " + sim.operation;
+                lblDebugger.Text = "Unimplemented instruction " + sim.operation;
             }
             if (!String.IsNullOrEmpty(sim.rd_name) && !String.Equals(TextParser.GetGenericRegisterName(), sim.rt_name))
             {
@@ -69,7 +69,7 @@ namespace MIPS32
             else
             {
                
-                i = (SimulatorList.ListToExecute.FindIndex(delegate (SimulatorParameters find) { return find.pc.ToString() == sim.immediate; }));
+                i = (SimulatorList.ListToExecute.FindIndex(delegate (SimulatorParameters find) { return DecimalToHex(find.pc.ToString()) == DecimalToHex(sim.immediate); }));
   
             }
             try

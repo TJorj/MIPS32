@@ -252,11 +252,30 @@ namespace MIPS32
 
         private void simulateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SimulatorForm Form2 = new SimulatorForm();
-
-           
-            
+            SimulatorForm Form2 = new SimulatorForm();      
             Form2.Show();
+        }
+
+        private void simulatorDemoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Any unsaved changes will be lost. Continue?", "Load File", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                txtBoxMachineCode.Clear();
+                txtBoxErrors.Clear();
+                txtBoxMnemonics.Clear();
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                using (Stream stream = assembly.GetManifestResourceStream("MIPS32.simulator_demo.txt"))
+                using (StreamReader inFile = new StreamReader(stream))
+                {
+                    while (!inFile.EndOfStream)
+                    {
+                        string line = inFile.ReadLine();
+                        txtBoxMnemonics.AppendText(line);
+                        txtBoxMnemonics.AppendText(Environment.NewLine);
+                    }
+                }
+            }
         }
     }
 

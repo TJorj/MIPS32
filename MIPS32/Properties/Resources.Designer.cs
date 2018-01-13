@@ -61,16 +61,13 @@ namespace MIPS32.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///.
+        ///   Looks up a localized string similar to asd $t2 $t3 $t5
+        ///add $t1 $s1 $t4 add
+        ///sub $t2 $s1
+        ///and $t3 $t4 $t3 $s5
+        ///mult $stf20 $s0
+        ///j 23
+        ///lhu $s1 24($t3).
         /// </summary>
         internal static string errors_demo {
             get {
@@ -183,6 +180,21 @@ namespace MIPS32.Properties {
         internal static string registers {
             get {
                 return ResourceManager.GetString("registers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ori $t1 $zero 0x5
+        ///ori $t2 $zero 0x4
+        ///ori $t3 $zero 0x3
+        ///add $t4 $t1 $t2
+        ///add $t4 $t4 $t3
+        ///sub $t5 $t1 $t2
+        ///j 0xc.
+        /// </summary>
+        internal static string simulator_demo {
+            get {
+                return ResourceManager.GetString("simulator_demo", resourceCulture);
             }
         }
     }
