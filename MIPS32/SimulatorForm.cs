@@ -20,11 +20,11 @@ namespace MIPS32
                 txtBoxInstr.AppendText(Environment.NewLine);
 
                 tmp_pc = tmp_pc + 4;
-                txtBoxPC.AppendText(Convert.ToString(tmp_pc,16));
+                txtBoxPC.AppendText(DecimalToHex(tmp_pc.ToString()));
                 txtBoxPC.AppendText(Environment.NewLine);
             }
             ColorCurrentLine(i, Color.Red);
-            pc.Text = SimulatorList.ListToExecute[i].pc;
+            pc.Text = DecimalToHex(SimulatorList.ListToExecute[i].pc);
             t1.Text = "3";
             t2.Text = "1";
             t3.Text = "1";
@@ -40,12 +40,12 @@ namespace MIPS32
             if (!String.IsNullOrEmpty(sim.rt_name)&&!String.Equals(TextParser.GetGenericRegisterName(),sim.rt_name))
             { 
                 controls = this.Controls.Find(sim.rt_name, true);
-                sim.rt_value = controls[0].Text;
+                sim.rt_value = HexToDecimal(controls[0].Text);
             }
             if (!String.IsNullOrEmpty(sim.rs_name) && !String.Equals(TextParser.GetGenericRegisterName(), sim.rt_name))
             {
                 controls = this.Controls.Find(sim.rs_name, true);
-                sim.rs_value = controls[0].Text;
+                sim.rs_value = HexToDecimal(controls[0].Text);
        
             }
             try
@@ -59,7 +59,7 @@ namespace MIPS32
             if (!String.IsNullOrEmpty(sim.rd_name) && !String.Equals(TextParser.GetGenericRegisterName(), sim.rt_name))
             {
                 controls = this.Controls.Find(sim.rd_name, true);
-                controls[0].Text = sim.rd_value;
+                controls[0].Text = DecimalToHex(sim.rd_value);
               
             }
             if (String.IsNullOrEmpty(sim.immediate))
@@ -72,8 +72,16 @@ namespace MIPS32
                 i = (SimulatorList.ListToExecute.FindIndex(delegate (SimulatorParameters find) { return find.pc.ToString() == sim.immediate; }));
   
             }
+            try
+            {
 
-            pc.Text = Convert.ToString(Convert.ToInt32(SimulatorList.ListToExecute[i].pc),16);
+                pc.Text = DecimalToHex(SimulatorList.ListToExecute[i].pc);
+            }
+            catch(Exception ex)
+            {
+                lblDebugger.Text = "Reached end of instructions";
+                btnExecute.Enabled = false;
+            }
             ColorCurrentLine(i, Color.Red);
         }
 
@@ -93,6 +101,15 @@ namespace MIPS32
         {
             SimulatorDisplayQueue.Clear();
             SimulatorList.ListToExecute.Clear();
+        }
+        private string DecimalToHex(string input)
+        {
+            return Convert.ToString(Convert.ToInt32(input), 16);
+            
+        }
+        private string HexToDecimal(string input)
+        {
+            return Convert.ToString(Convert.ToInt32(input, 16));
         }
     }
 }

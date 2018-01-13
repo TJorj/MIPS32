@@ -22,3 +22,14 @@ C:\Users\TGeorge\Desktop\MIPS32\MIPS32\bin\Debug\CustomControls.dll
 C:\Users\TGeorge\Desktop\MIPS32\MIPS32\obj\Debug\MIPS32.SimulatorForm.resources
 C:\Users\TGeorge\Dropbox\SOC\MIPS32\MIPS32\obj\Debug\MIPS32.SimulatorForm.resources
 C:\Users\TGeorge\Dropbox\SOC\MIPS32\MIPS32\obj\Debug\MIPS32.csprojResolveAssemblyReference.cache
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\bin\Debug\MIPS32.exe.config
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\bin\Debug\MIPS32.exe
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\bin\Debug\MIPS32.pdb
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\bin\Debug\CustomControls.dll
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\obj\Debug\MIPS32.AssemblerForm.resources
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\obj\Debug\MIPS32.Properties.Resources.resources
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\obj\Debug\MIPS32.SimulatorForm.resources
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\obj\Debug\MIPS32.csproj.GenerateResource.Cache
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\obj\Debug\MIPS32.csproj.CoreCompileInputs.cache
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\obj\Debug\MIPS32.exe
+C:\Users\TGeorge\Source\Repos\MIPS32\MIPS32\obj\Debug\MIPS32.pdb
