@@ -21,3 +21,4 @@ C:\Users\TGeorge\Desktop\MIPS32\MIPS32\bin\Debug\MIPS32.pdb
 C:\Users\TGeorge\Desktop\MIPS32\MIPS32\bin\Debug\CustomControls.dll
 C:\Users\TGeorge\Desktop\MIPS32\MIPS32\obj\Debug\MIPS32.SimulatorForm.resources
 C:\Users\TGeorge\Dropbox\SOC\MIPS32\MIPS32\obj\Debug\MIPS32.SimulatorForm.resources
+C:\Users\TGeorge\Dropbox\SOC\MIPS32\MIPS32\obj\Debug\MIPS32.csprojResolveAssemblyReference.cache

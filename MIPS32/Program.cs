@@ -13,7 +13,7 @@ namespace MIPS32
         {
             Instructions.LoadInstructions();
             Registers.LoadRegisters();
-            SimulatorInstructions.LoadSimulator();
+            SimulatorDictionary.LoadSimulator();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AssemblerForm());

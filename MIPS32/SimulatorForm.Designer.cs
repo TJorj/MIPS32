@@ -55,6 +55,7 @@
             this.txtBoxPC = new Ionic.WinForms.RichTextBoxEx();
             this.lblDebugger = new System.Windows.Forms.Label();
             this.pc = new Ionic.WinForms.RichTextBoxEx();
+            this.zero = new Ionic.WinForms.RichTextBoxEx();
             this.SuspendLayout();
             // 
             // lblProgramCounter
@@ -423,11 +424,33 @@
             this.pc.TabIndex = 23;
             this.pc.Text = "";
             // 
+            // zero
+            // 
+            this.zero.Location = new System.Drawing.Point(765, 316);
+            this.zero.Name = "zero";
+            this.zero.NumberAlignment = System.Drawing.StringAlignment.Center;
+            this.zero.NumberBackground1 = System.Drawing.SystemColors.ControlLight;
+            this.zero.NumberBackground2 = System.Drawing.SystemColors.Window;
+            this.zero.NumberBorder = System.Drawing.SystemColors.ControlDark;
+            this.zero.NumberBorderThickness = 1F;
+            this.zero.NumberColor = System.Drawing.Color.DarkGray;
+            this.zero.NumberFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zero.NumberLeadingZeroes = false;
+            this.zero.NumberLineCounting = Ionic.WinForms.RichTextBoxEx.LineCounting.CRLF;
+            this.zero.NumberPadding = 2;
+            this.zero.ReadOnly = true;
+            this.zero.ShowLineNumbers = false;
+            this.zero.Size = new System.Drawing.Size(146, 26);
+            this.zero.TabIndex = 27;
+            this.zero.Text = "0";
+            this.zero.Visible = false;
+            // 
             // SimulatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 372);
+            this.Controls.Add(this.zero);
             this.Controls.Add(this.lblDebugger);
             this.Controls.Add(this.txtBoxPC);
             this.Controls.Add(this.txtBoxInstr);
@@ -491,5 +514,6 @@
         private Ionic.WinForms.RichTextBoxEx txtBoxPC;
         private System.Windows.Forms.Label lblDebugger;
         private Ionic.WinForms.RichTextBoxEx pc;
+        private Ionic.WinForms.RichTextBoxEx zero;
     }
 }

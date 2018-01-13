@@ -303,6 +303,7 @@ namespace MIPS32
                     else
                         throw new ParameterException("Paramaeter error for immediate value");
                     ITypeStringGenerator(reg_src, reg_tmp, immediate_offset);
+                    SimulatorDisplayQueue.InstructionsDisplay.Enqueue(_text);
                 }
             }
             else
@@ -359,6 +360,7 @@ namespace MIPS32
                 throw new ParameterException("Parameter error for " + _reg_tmp);
             }
             parsed_string += _immediate_offset;
+            SimulatorList.ListToExecute.Add(new SimulatorParameters(_reg_src, _reg_tmp, "", "", _immediate_offset, nume_instr));
         }
         private static void JTypeGenericParser(string _text)
         {

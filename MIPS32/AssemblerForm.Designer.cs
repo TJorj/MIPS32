@@ -36,10 +36,11 @@
             this.loadToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.instructionsDemoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorsDemoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simulatorDemoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assembleToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simulateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,6 @@
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.assembleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.simulatorDemoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelTxtBoxCode.SuspendLayout();
             this.panelTxtBoxMachine.SuspendLayout();
@@ -137,6 +137,12 @@
             this.errorsDemoToolStripMenuItem.Text = "Errors Demo";
             this.errorsDemoToolStripMenuItem.Click += new System.EventHandler(this.errorsDemoToolStripMenuItem_Click);
             // 
+            // simulatorDemoToolStripMenuItem
+            // 
+            this.simulatorDemoToolStripMenuItem.Name = "simulatorDemoToolStripMenuItem";
+            this.simulatorDemoToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.simulatorDemoToolStripMenuItem.Text = "Simulator Demo";
+            // 
             // customFileToolStripMenuItem
             // 
             this.customFileToolStripMenuItem.Name = "customFileToolStripMenuItem";
@@ -151,19 +157,19 @@
             this.assembleToolStripMenuItem2.Text = "Assemble";
             this.assembleToolStripMenuItem2.Click += new System.EventHandler(this.assembleToolStripMenuItem_Click);
             // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
             // simulateToolStripMenuItem
             // 
             this.simulateToolStripMenuItem.Name = "simulateToolStripMenuItem";
             this.simulateToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.simulateToolStripMenuItem.Text = "Simulate";
             this.simulateToolStripMenuItem.Click += new System.EventHandler(this.simulateToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // newToolStripMenuItem
             // 
@@ -219,7 +225,7 @@
             this.txtBoxMnemonics.ShowLineNumbers = true;
             this.txtBoxMnemonics.Size = new System.Drawing.Size(457, 240);
             this.txtBoxMnemonics.TabIndex = 0;
-            this.txtBoxMnemonics.Text = "add $t1 $t1 $t3\nj 0x0";
+            this.txtBoxMnemonics.Text = "ori $t1 $zero 0x5\nj 0x0";
             // 
             // panelTxtBoxMachine
             // 
@@ -318,12 +324,6 @@
             this.assembleToolStripMenuItem1.Size = new System.Drawing.Size(85, 24);
             this.assembleToolStripMenuItem1.Text = "Assemble";
             this.assembleToolStripMenuItem1.Click += new System.EventHandler(this.assembleToolStripMenuItem1_Click);
-            // 
-            // simulatorDemoToolStripMenuItem
-            // 
-            this.simulatorDemoToolStripMenuItem.Name = "simulatorDemoToolStripMenuItem";
-            this.simulatorDemoToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.simulatorDemoToolStripMenuItem.Text = "Simulator Demo";
             // 
             // AssemblerForm
             // 

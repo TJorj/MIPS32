@@ -20,7 +20,7 @@ namespace MIPS32
                 txtBoxInstr.AppendText(Environment.NewLine);
 
                 tmp_pc = tmp_pc + 4;
-                txtBoxPC.AppendText((tmp_pc).ToString());
+                txtBoxPC.AppendText(Convert.ToString(tmp_pc,16));
                 txtBoxPC.AppendText(Environment.NewLine);
             }
             ColorCurrentLine(i, Color.Red);
@@ -50,7 +50,7 @@ namespace MIPS32
             }
             try
             {
-                SimulatorInstructions.Dict[sim.operation].Invoke(sim);
+                SimulatorDictionary.Dict[sim.operation].Invoke(sim);
             }
             catch(Exception)
             {
@@ -73,7 +73,7 @@ namespace MIPS32
   
             }
 
-            pc.Text = SimulatorList.ListToExecute[i].pc;
+            pc.Text = Convert.ToString(Convert.ToInt32(SimulatorList.ListToExecute[i].pc),16);
             ColorCurrentLine(i, Color.Red);
         }
 
