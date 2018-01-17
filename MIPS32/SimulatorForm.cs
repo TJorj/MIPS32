@@ -25,9 +25,7 @@ namespace MIPS32
             }
             ColorCurrentLine(i, Color.Red);
             pc.Text = DecimalToHex(SimulatorList.ListToExecute[i].pc);
-            t1.Text = "3";
-            t2.Text = "1";
-            t3.Text = "1";
+            
             
 
         }

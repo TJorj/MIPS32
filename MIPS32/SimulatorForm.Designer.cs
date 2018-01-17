@@ -56,6 +56,7 @@
             this.lblDebugger = new System.Windows.Forms.Label();
             this.pc = new Ionic.WinForms.RichTextBoxEx();
             this.zero = new Ionic.WinForms.RichTextBoxEx();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblProgramCounter
@@ -202,7 +203,7 @@
             this.t1.ShowLineNumbers = false;
             this.t1.Size = new System.Drawing.Size(146, 26);
             this.t1.TabIndex = 14;
-            this.t1.Text = "";
+            this.t1.Text = "0";
             // 
             // t2
             // 
@@ -221,7 +222,7 @@
             this.t2.ShowLineNumbers = false;
             this.t2.Size = new System.Drawing.Size(146, 26);
             this.t2.TabIndex = 15;
-            this.t2.Text = "";
+            this.t2.Text = "0";
             // 
             // t3
             // 
@@ -240,7 +241,7 @@
             this.t3.ShowLineNumbers = false;
             this.t3.Size = new System.Drawing.Size(146, 26);
             this.t3.TabIndex = 16;
-            this.t3.Text = "";
+            this.t3.Text = "0";
             // 
             // t4
             // 
@@ -259,7 +260,7 @@
             this.t4.ShowLineNumbers = false;
             this.t4.Size = new System.Drawing.Size(146, 26);
             this.t4.TabIndex = 17;
-            this.t4.Text = "";
+            this.t4.Text = "0";
             // 
             // t5
             // 
@@ -278,7 +279,7 @@
             this.t5.ShowLineNumbers = false;
             this.t5.Size = new System.Drawing.Size(146, 26);
             this.t5.TabIndex = 18;
-            this.t5.Text = "";
+            this.t5.Text = "0";
             // 
             // t6
             // 
@@ -297,7 +298,7 @@
             this.t6.ShowLineNumbers = false;
             this.t6.Size = new System.Drawing.Size(146, 26);
             this.t6.TabIndex = 19;
-            this.t6.Text = "";
+            this.t6.Text = "0";
             // 
             // t7
             // 
@@ -316,7 +317,7 @@
             this.t7.ShowLineNumbers = false;
             this.t7.Size = new System.Drawing.Size(146, 26);
             this.t7.TabIndex = 20;
-            this.t7.Text = "";
+            this.t7.Text = "0";
             // 
             // t8
             // 
@@ -335,7 +336,7 @@
             this.t8.ShowLineNumbers = false;
             this.t8.Size = new System.Drawing.Size(146, 26);
             this.t8.TabIndex = 21;
-            this.t8.Text = "";
+            this.t8.Text = "0";
             // 
             // t9
             // 
@@ -354,10 +355,11 @@
             this.t9.ShowLineNumbers = false;
             this.t9.Size = new System.Drawing.Size(146, 26);
             this.t9.TabIndex = 22;
-            this.t9.Text = "";
+            this.t9.Text = "0";
             // 
             // txtBoxInstr
             // 
+            this.txtBoxInstr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxInstr.Location = new System.Drawing.Point(227, 97);
             this.txtBoxInstr.Name = "txtBoxInstr";
             this.txtBoxInstr.NumberAlignment = System.Drawing.StringAlignment.Center;
@@ -378,6 +380,7 @@
             // 
             // txtBoxPC
             // 
+            this.txtBoxPC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPC.Location = new System.Drawing.Point(12, 97);
             this.txtBoxPC.Name = "txtBoxPC";
             this.txtBoxPC.NumberAlignment = System.Drawing.StringAlignment.Center;
@@ -445,11 +448,21 @@
             this.zero.Text = "0";
             this.zero.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(718, 319);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 17);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Zero";
+            // 
             // SimulatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 372);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.zero);
             this.Controls.Add(this.lblDebugger);
             this.Controls.Add(this.txtBoxPC);
@@ -515,5 +528,6 @@
         private System.Windows.Forms.Label lblDebugger;
         private Ionic.WinForms.RichTextBoxEx pc;
         private Ionic.WinForms.RichTextBoxEx zero;
+        private System.Windows.Forms.Label label1;
     }
 }

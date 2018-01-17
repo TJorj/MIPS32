@@ -35,6 +35,7 @@ namespace MIPS32
         {
             SimulatorDisplayQueue.Clear();
             SimulatorList.ListToExecute.Clear();
+            SimulatorParameters.ResetCounter();
             txtBoxMachineCode.Clear();
             txtBoxErrors.Clear();
             for (int i = 0; i < txtBoxMnemonics.Lines.Count(); i++)
@@ -91,6 +92,9 @@ namespace MIPS32
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SimulatorDisplayQueue.Clear();
+            SimulatorList.ListToExecute.Clear();
+            SimulatorParameters.ResetCounter();
             DialogResult dialogResult = MessageBox.Show("Any unsaved changes will be lost. Continue?", "New File", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -252,8 +256,14 @@ namespace MIPS32
 
         private void simulateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SimulatorForm Form2 = new SimulatorForm();      
-            Form2.Show();
+            try
+            {
+                SimulatorForm Form2 = new SimulatorForm();
+                Form2.Show();
+            }catch(Exception)
+            {
+                MessageBox.Show("Simulator error, please make sure code is assembled or restart the application if the problem persists.");
+            }
         }
 
         private void simulatorDemoToolStripMenuItem_Click(object sender, EventArgs e)

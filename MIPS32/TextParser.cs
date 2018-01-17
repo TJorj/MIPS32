@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
+
+
 namespace MIPS32
 {
     public static class TextParser
@@ -298,7 +300,7 @@ namespace MIPS32
                 {
                     //completeaza valoarea cu 0 sau exceptie daca depaseste marimea 
                     immediate_offset = HexToBinary(matches[0].Value.Replace(" ", ""));
-                    if(immediate_offset.Count() < 16)
+                    if(immediate_offset.Count() <= 16)
                         immediate_offset = immediate_offset.PadLeft(16, '0');
                     else
                         throw new ParameterException("Paramaeter error for immediate value");
@@ -329,7 +331,7 @@ namespace MIPS32
                 {
                     //completeaza valoarea cu 0 sau exceptie daca depaseste marimea 
                     immediate_offset = HexToBinary(matches[0].Groups["offset_val"].Value.Replace(" ", ""));
-                    if (immediate_offset.Count() < 16)
+                    if (immediate_offset.Count() <= 16)
                         immediate_offset = immediate_offset.PadLeft(16, '0');
                     else
                         throw new ParameterException("Paramaeter error for offset value");

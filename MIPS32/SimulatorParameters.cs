@@ -4,6 +4,7 @@ namespace MIPS32
 
     public class SimulatorParameters
     {
+        //clasa pentru parametrii unei instructiuni (nume functie si registrii + valori)
         private static class Counter
         {
             private static int pc = -4;
@@ -11,6 +12,10 @@ namespace MIPS32
             {
                 pc = pc + 4;
                 return pc;
+            }
+            public static void reset()
+            {
+                pc = -4;
             }
         }
         public string pc;   
@@ -24,6 +29,11 @@ namespace MIPS32
             operation = _operation;
             immediate = _immediate;
             pc = Counter.increment().ToString();
+        }
+
+        public static void ResetCounter()
+        {
+            Counter.reset();
         }
     }
 }

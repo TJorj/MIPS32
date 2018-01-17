@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace MIPS32
 {
+    //dictionar cu functie de executat pentru fiecare functie
     public delegate void execute(SimulatorParameters Sim);
     public static class SimulatorDictionary
     {
